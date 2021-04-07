@@ -1,0 +1,20 @@
+{"plataformas": [
+  {
+      "id": 1,
+      "sku": "TBT01",
+      "nome": "Tablet",
+      "descricao": "Chip para navegar à vontade"
+  },
+  {
+      "id": 2,
+      "sku": "CPT02",
+      "nome": "Computador",
+      "descricao": "Seu computador|Sempre conectado"
+  },
+  {
+      "id": 3,
+      "sku": "WF03",
+      "nome": "WI-FI",
+      "descricao": "Internet WI-FI para|casa toda"
+  }
+]}

@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+       <div class="row">
+         <div class="col-4 offset-4 titulo_w">
+            <h1 *ngFor="let plataforma of tablet">{{plataforma.nome}}</h1>
+         </div>
+       </div>
+       <div class="row">
+        <div class="col-6 offset-3 borderred">
+            <h2 *ngFor="let plataforma of tablet">{{plataforma.sku}}</h2>
+            <ul >
+              <li *ngFor="let plano of planos">{{plano.id}}</li>
+              <li *ngFor="let plano of planos">{{plano.sku}}</li>
+
+            </ul>
+
+            <p class="text-center" *ngFor = "let plataforma of tablet">{{plataforma.descricao:id}}</p>
+            <p class="text-center">
+              <strong>{{porapenas}}</strong>
+            </p>
+            <p>{{mensagemcliente}}</p>
+            <div class="row">
+              <div class="col-12">
+                <form action="">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="row espaco_linha">
+                          <div class="col-2">
+                            <label for="">Nome</label>
+                          </div>
+                          <div class="col-10" >
+                            <input class="input_wooza" type="text"  id="nome" name="nome">
+                              <!-- <div *ngIf="nome.errors.required">Preencha Nome</div> -->
+                          </div>
+                      </div>
+                      <div class="row espaco_linha">
+                        <div class="col-2">
+                          <label for="">E-mail</label>
+                        </div>
+                        <div class="col-10">
+                          <input type="text" class="input_wooza"  id="email" name="email">
+                            <!-- <div *ngIf="email.errors.required">Digite um e-mail</div> -->
+                        </div>
+                      </div>
+                      <div class="row espaco_linha">
+                        <div class="col-2"><label for="">Endereço</label></div>
+                        <div class="col-5"><input type="text" class="input_wooza" placeholder="Rua, Avenida, Travessa"  id="logradouro" name="logradouro">
+                          <!-- <div *ngIf="logradouro.errors.required">Preencha seu endereço</div> -->
+                        </div>
+                        <div class="col-2"><input type="text" class="input_wooza" placeholder="número"  id="numero" name="numero"></div>
+                        <div class="col-3"><input type="text" class="input_wooza" placeholder="complemento"  id="complemento" name="complemento"></div>
+                      </div>
+                      <div class="row espaco_linha">
+                        <div class="col-2"><label for="">Cidade</label></div>
+                        <div class="col-5"><input type="text" class="input_wooza"  id="cidade" name="cidade">
+                          <!-- <div *ngIf="cidade.errors.required">Preencha sua cidade</div> -->
+                        </div>
+                        <div class="col-1"><label for="">UF</label></div>
+                        <div class="col-2"><input type="text" class="input_wooza" id="uf" name="uf">
+                           <!-- <div *ngIf="uf.errors.required">Preencha sigla do Estado</div> -->
+                        </div>
+                      </div>
+                      <div class="row espaco_linha">
+                        <div class="col-2"><label for="">CEP</label></div>
+                        <div class="col-5"><input type="text" class="input_wooza"  id="cep" name="cep">
+                            <!-- <div *ngIf="cep.errors.required">Digite seu CEP</div> -->
+                        </div>
+                      </div>
+                      <div class="row espaco_linha">
+                        <div class="col-2">
+                          <label for="">CPF</label>
+                        </div>
+                        <div class="col-6">
+                          <input type="text" class="input_wooza"  id="cpf" name="cpf">
+                          <!-- <div *ngIf="cpf.errors.required">Digite o CPF</div> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row espaco_linha">
+                    <div class="col-4 offset-5">
+                      <button class="btnenviar" type="submit">Enviar</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
