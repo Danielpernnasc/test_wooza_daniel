@@ -1,20 +1,122 @@
-{"plataformas": [
-  {
-      "id": 1,
+{
+  "tablet": [
+    {
       "sku": "TBT01",
       "nome": "Tablet",
       "descricao": "Chip para navegar à vontade"
-  },
-  {
+    }
+  ],
+  "Desktop": [
+    {
+      "skudesktop": "CPT02",
+      "nomedesktop": "Computador",
+      "descricaodesktop": "Seu computador|Sempre conectado"
+    }
+  ],
+  "Wifi": [
+    {
+      "skuwifi": "WF03",
+      "nomewifi": "WI-FI",
+      "descricaowifi": "Internet WI-FI para|casa toda"
+    }
+  ],
+  "planos": [
+    {
+      "id": 1,
+      "sku": "TI00001NA_NOVA_LINHA",
+      "franquia": "1GB",
+      "valor": "21.50",
+      "ativo": true
+    },
+    {
       "id": 2,
-      "sku": "CPT02",
-      "nome": "Computador",
-      "descricao": "Seu computador|Sempre conectado"
-  },
-  {
+      "sku": "TI00002NA_NOVA_LINHA",
+      "franquia": "2GB",
+      "valor": "59.90",
+      "ativo": true
+    },
+    {
       "id": 3,
-      "sku": "WF03",
-      "nome": "WI-FI",
-      "descricao": "Internet WI-FI para|casa toda"
-  }
-]}
+      "sku": "TI00003NA_NOVA_LINHA",
+      "franquia": "4GB",
+      "valor": "72.60",
+      "ativo": true
+    },
+    {
+      "id": 4,
+      "sku": "TI00004NA_NOVA_LINHA",
+      "franquia": "6GB",
+      "valor": "81.10",
+      "ativo": false
+    },
+    {
+      "id": 5,
+      "sku": "TI00005NA_NOVA_LINHA",
+      "franquia": "10GB",
+      "valor": "105.80",
+      "ativo": true
+    }
+  ],
+  "TI00001": [
+    {
+      "planoescolhido": "TI00001NA_NOVA_LINHA 1GB"
+    },
+    {
+      "planoescolhido": "TI00002NA_NOVA_LINHA 2GB"
+    },
+    {
+      "planoescolhido": "TI00003NA_NOVA_LINHA 4GB"
+    },
+    {
+      "planoescolhido": "TI00004NA_NOVA_LINHA 6GB"
+    },
+    {
+      "planoescolhido": "TI00005NA_NOVA_LINHA 10GB"
+    }
+  ],
+  "cliente": [
+    {
+      "id": 1,
+      "plano": "TI00001NA_NOVA_LINHA 1GB",
+      "nome": "Daniel Péricles do Nascimento ",
+      "email": "dpericles6@gmail.com",
+      "rua": "Padre Manuel Pedroso",
+      "numero": "98",
+      "complemento": "apto 51 bloco 3",
+      "fone": "(11) 96711-9004",
+      "cep": "03590-150",
+      "cpf": "291.048.288-01"
+    },
+    {
+      "nome": "Daniel Péricles do Nascimento",
+      "id": 2
+    },
+    {
+      "nome": "Danilo Pereira Nascimento",
+      "id": 3
+    },
+    {
+      "estado": "SP",
+      "nome": "DANIEL PERICLES DO NASCIMENTO",
+      "email": "dpericles6@hotmail.com",
+      "logradouro": "Vitória do Mearim",
+      "cidade": "São Paulo",
+      "CEP": "03243-080",
+      "fone": "(11) 96646-1111",
+      "CPF": "291.048.288-01",
+      "id": 4
+    },
+    {
+      "plano": "TI00001NA_NOVA_LINHA 1GB",
+      "nome": "Danilo Pereira Nassau",
+      "email": "danilopereira@hotmai.com",
+      "logradouro": "Av Oratório",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "CEP": "03221-100",
+      "fone": "(11) 96646-1111",
+      "CPF": "555.555.555-55",
+      "id": 5
+    }
+  ]
+}

@@ -9,7 +9,7 @@ import { Clientes } from '../model';
 })
 export class ClienteService {
 
-  url = 'http://localhost:3000/plataformas';
+  url = 'http://localhost:3001/cliente';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -19,6 +19,14 @@ export class ClienteService {
 
   getClient(): Observable<[Clientes]> {
     return this.httpClient.get<[Clientes]>(this.url)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  getClientId(id: number): Observable<Clientes>{
+    return this.httpClient.get<Clientes>(this.url + '/' + id)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -49,9 +57,11 @@ export class ClienteService {
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
+      // Erro ocorreu no lado do client
       errorMessage = error.error.message;
     } else {
-      errorMessage = `Código do error: ${error.status},`+`messagem: ${error.message}`;
+      // Erro ocorreu no lado do servidor
+      errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
     }
     console.log(errorMessage);
     return throwError(errorMessage);

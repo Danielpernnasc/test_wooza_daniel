@@ -3,84 +3,139 @@
     <div class="col-12">
        <div class="row">
          <div class="col-4 offset-4 titulo_w">
-            <h1 *ngFor="let plataforma of tablet">{{plataforma.nome}}</h1>
+            <h1 *ngFor="let tablet of mobile">{{tablet.nome}}</h1>
          </div>
        </div>
        <div class="row">
-        <div class="col-6 offset-3 borderred">
-            <h2 *ngFor="let plataforma of tablet">{{plataforma.sku}}</h2>
-            <ul >
-              <li *ngFor="let plano of planos">{{plano.id}}</li>
-              <li *ngFor="let plano of planos">{{plano.sku}}</li>
-
-            </ul>
-
-            <p class="text-center" *ngFor = "let plataforma of tablet">{{plataforma.descricao:id}}</p>
-            <p class="text-center">
-              <strong>{{porapenas}}</strong>
-            </p>
+        <div class="col-12 borderred">
+            <h2 *ngFor="let tablet of mobile" >{{tablet.sku}}</h2>
+            <p class="text-center" *ngFor="let tablet of mobile">{{tablet.descricao}}</p>
+            <div class="row" *ngFor = "let plano of planos">
+              <div class="col-6 text-center espaco_linha">{{plano.sku}}</div>
+              <div class="col-2 text-center espaco_linha">{{plano.franquia}}</div>
+              <div class="col-2 text-center espaco_linha">{{plano.valor | currency}}</div>
+            </div>
             <p>{{mensagemcliente}}</p>
             <div class="row">
               <div class="col-12">
-                <form action="">
+                <form (ngSubmit)="f.form.valid && saveClient(f)" #f="ngForm" novalidate>
                   <div class="row">
                     <div class="col-12">
                       <div class="row espaco_linha">
-                          <div class="col-2">
-                            <label for="">Nome</label>
+                        <div class="col-2 margintop30px">
+                          <label class="sku" for="">Plano Escolhido</label>
+                        </div>
+                        <div class="col-8">
+                          <div class="row">
+                            <div class="col-6">
+                              <label for="">Escolha o seu plano</label>
+                              <select class="input_wooza" #sel (change)="changed(sel.value)" id="plano" name="plano" [(ngModel)]="client.plano" #plano="ngModel" required [ngClass]="{'is-invalid': f.submitted && plano.invalid}" value="Select">
+                                <option *ngFor="let franq of PLANO" [ngValue]="franq">{{franq}}</option>
+                              </select>
+                              <div *ngIf="f.submitted && plano.invalid" class="invalid-feedback">
+                                <div *ngIf="plano.errors.required">Escolha o Plano</div>
+                              </div>
+                            </div>
+                            <div class="col-6 margintop30px">
+                              <span>Tablet {{value}}</span>
+                            </div>
                           </div>
-                          <div class="col-10" >
-                            <input class="input_wooza" type="text"  id="nome" name="nome">
-                              <!-- <div *ngIf="nome.errors.required">Preencha Nome</div> -->
+                        </div>
+                      </div>
+                      <div class="row espaco_linha">
+                        <div class="col-2">
+                          <label for="">Nome</label>
+                        </div>
+                        <div class="col-10" >
+                          <input class="input_wooza" [(ngModel)]="client.nome" type="text"  id="nome" name="nome" #nome="ngModel" required [ngClass]="{ 'is-invalid': f.submitted && nome.invalid }" placeholder="Digite seu nome">
+                          <div *ngIf="f.submitted && nome.invalid" class="invalid-feedback">
+                            <div *ngIf="nome.errors.required">Nome é obrigatório</div>
                           </div>
+                        </div>
                       </div>
                       <div class="row espaco_linha">
                         <div class="col-2">
                           <label for="">E-mail</label>
                         </div>
                         <div class="col-10">
-                          <input type="text" class="input_wooza"  id="email" name="email">
-                            <!-- <div *ngIf="email.errors.required">Digite um e-mail</div> -->
+                          <input type="text" class="input_wooza"  id="email" name="email" [(ngModel)]="client.email" #email="ngModel" required [ngClass]="{'is-invalid': f.submitted && email.invalid}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder = "Digite seu e-mail">
+                          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                            <div *ngIf="email.errors.required">Digite seu e-mail!</div>
+                            <div *ngIf="email.errors && (email.touched || email.dirty)">
+                                <div [hidden]="!email.errors?.pattern"> 
+                                  Digite um email válido
+                                </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="row espaco_linha">
                         <div class="col-2"><label for="">Endereço</label></div>
-                        <div class="col-5"><input type="text" class="input_wooza" placeholder="Rua, Avenida, Travessa"  id="logradouro" name="logradouro">
-                          <!-- <div *ngIf="logradouro.errors.required">Preencha seu endereço</div> -->
+                        <div class="col-5">
+                          <input type="text" class="input_wooza" placeholder="Rua, Avenida, Travessa"  id="logradouro" name="logradouro" [(ngModel)]="client.logradouro" #logradouro="ngModel" required [ngClass]="{'is-invalid': f.submitted && logradouro.invalid}" placeholder="Digite seu Endereço">
+                          <div *ngIf="f.submitted && logradouro.invalid" class="invalid-feedback">
+                            <div *ngIf="logradouro.errors.required">Digite seu Endereço</div>
+                          </div>
                         </div>
                         <div class="col-2"><input type="text" class="input_wooza" placeholder="número"  id="numero" name="numero"></div>
                         <div class="col-3"><input type="text" class="input_wooza" placeholder="complemento"  id="complemento" name="complemento"></div>
                       </div>
                       <div class="row espaco_linha">
                         <div class="col-2"><label for="">Cidade</label></div>
-                        <div class="col-5"><input type="text" class="input_wooza"  id="cidade" name="cidade">
-                          <!-- <div *ngIf="cidade.errors.required">Preencha sua cidade</div> -->
+                        <div class="col-5">
+                          <input type="text" class="input_wooza"  id="cidade" name="cidade" [(ngModel)]="client.cidade" #cidade="ngModel" required [ngClass]="{'is-invalid': f.submitted && cidade.invalid}" placeholder="Digite sua Cidade">
+                          <div *ngIf="f.submitted && cidade.invalid" class="invalid-feedback">
+                            <div *ngIf="cidade.errors.required">Digite sua Cidade</div>
+                          </div>
                         </div>
-                        <div class="col-1"><label for="">UF</label></div>
-                        <div class="col-2"><input type="text" class="input_wooza" id="uf" name="uf">
-                           <!-- <div *ngIf="uf.errors.required">Preencha sigla do Estado</div> -->
+                        <div class="col-1 text-center"><label for="">UF</label></div>
+                        <div class="col-4">
+                          <select class="select_uf" (change)="changeState($event)" name="estado" id="estado" [(ngModel)]="client.estado" #estado="ngModel" required [ngClass]="{'is-invalid': f.submitted && estado.invalid}">
+                            <option *ngFor="let state of UF" [ngValue]="state">{{state}}</option>
+                          </select>
+                          <div *ngIf="f.submitted && estado.invalid" class="invalid-feedback">
+                            <div *ngIf="estado.errors.required">Escolha o Estado</div>
+                          </div>
                         </div>
                       </div>
                       <div class="row espaco_linha">
                         <div class="col-2"><label for="">CEP</label></div>
-                        <div class="col-5"><input type="text" class="input_wooza"  id="cep" name="cep">
-                            <!-- <div *ngIf="cep.errors.required">Digite seu CEP</div> -->
+                        <div class="col-4"><input type="text" class="input_wooza"  id="CEP" name="CEP" [(ngModel)]="client.CEP" #CEP="ngModel" required [ngClass]="{'is-invalid': f.submitted && CEP.invalid}" placeholder="Digite o CEP" [textMask]="{mask: maskcep}">
+                            <div *ngIf="f.submitted && CEP.invalid" class="invalid-feedback">
+                              <div *ngIf="CEP.errors.required">Digite o CEP</div>
+                            </div>
                         </div>
+                        <div class="col-1"><label for="">telefone</label></div>
+                        <div class="col-4"><input type="text" class="input_wooza"  id="fone" name="fone" [textMask]="{mask: maskfone}" [(ngModel)]="client.fone" #fone="ngModel" required [ngClass]="{'is-invalid': f.submitted && fone.invalid}" placeholder="Digite o telefone">
+                            <div *ngIf="f.submitted && fone.invalid" class="invalid-feedback">
+                              <div *ngIf="fone.errors.required">Digite seu Telefone</div>
+                            </div>
+                        </div>
+                        
                       </div>
                       <div class="row espaco_linha">
                         <div class="col-2">
                           <label for="">CPF</label>
                         </div>
                         <div class="col-6">
-                          <input type="text" class="input_wooza"  id="cpf" name="cpf">
-                          <!-- <div *ngIf="cpf.errors.required">Digite o CPF</div> -->
+                          <input type="text" class="input_wooza"  id="CPF" name="CPF" [textMask]="{mask: maskcpf}" [(ngModel)]="client.CPF" #CPF="ngModel" required [ngClass]="{'is-invalid': f.submitted && CPF.invalid}" placeholder="Digite seu CPF">
+                            <div *ngIf="f.submitted && CPF.invalid" class="invalid-feedback">
+                              <div *ngIf="CPF.errors.required">Digite seu CPF</div>
+                            </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="row espaco_linha">
-                    <div class="col-4 offset-5">
-                      <button class="btnenviar" type="submit">Enviar</button>
+                  <div class="row">
+                    <div class="col-6 offset-4">
+                      <div class="row espaco_linha">
+                        <div class="col-4">
+                          <button type="submit" class="btnenviar">Enviar</button>
+                        </div>
+                        <div class="col-4">
+                          <button type="reset" class="btnenviar" (click)="cleanForm(f)">Cancelar</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </form>

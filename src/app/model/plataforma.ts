@@ -1,4 +1,4 @@
-export interface Plataforma {
+export interface Tablet {
   nome: string;
   sku: string;
   descricao: string
