@@ -8,6 +8,8 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class PlataformaService {
   url_tablet = 'http://localhost:3001/tablet';
+  url_desktop = 'http://localhost:3001/desktop';
+  url_wifi = 'http://localhost:3001/wifi';
  
 
   constructor(private httpClient: HttpClient) { }
@@ -24,8 +26,22 @@ export class PlataformaService {
       )
   }
 
+  getPlataformaDesk(): Observable<[any]>{
+    return this.httpClient.get<[any]>(this.url_desktop)
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    )
+  }
 
-
+  getPlataformaWifi(): Observable<[any]>{
+    return this.httpClient.get<any>(this.url_wifi)
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    )
+  }
+  
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

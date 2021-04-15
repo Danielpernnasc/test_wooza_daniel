@@ -26,7 +26,7 @@ export class TabletComponent implements OnInit {
     'TI00004NA_NOVA_LINHA 6GB',
     'TI00005NA_NOVA_LINHA 10GB'
   ];
-  letra: any = ['a', 'b', 'c', 'd', 'e'];
+
 
   
 
@@ -36,9 +36,6 @@ export class TabletComponent implements OnInit {
   plano = {} as Plano;
   planos: Plano[];
 
-  cliente = {} as Clientes;
-  clientes: Clientes[];
-
   TI01 = {} as TI00001;
   TI01s:  TI00001[];
 
@@ -46,7 +43,7 @@ export class TabletComponent implements OnInit {
   clients: Clientes[];
 
   value: any;
-  val: any;
+
 
   constructor(private plataformaService: PlataformaService, 
     private planoService: PlanosService, 
@@ -74,7 +71,7 @@ export class TabletComponent implements OnInit {
     this.value = value;
   }
   changeState(e) {
-    this.val = e;
+    this.value = e;
   }
 
   getPlataformasTablet() {
@@ -113,15 +110,15 @@ export class TabletComponent implements OnInit {
     }
     
   }
-  deleteClient(cliente: Clientes) {
-    this.clientService.deleteClient(cliente).subscribe(() => {
-      this.getClient();
-    });
-  }
+  // deleteClient(cliente: Clientes) {
+  //   this.clientService.deleteClient(cliente).subscribe(() => {
+  //     this.getClient();
+  //   });
+  // }
 
-  editClient(cliente: Clientes) {
-    this.cliente = {...cliente};
-  }
+  // editClient(cliente: Clientes) {
+  //   this.client = {...cliente};
+  // }
 
   cleanForm(form: NgForm) {
     this.getClient();

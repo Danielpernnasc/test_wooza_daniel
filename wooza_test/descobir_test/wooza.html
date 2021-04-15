@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <title>Test</title>
 </head>
 <body >
@@ -17,11 +18,23 @@
     </div>
     
     <div className="vacancies-closed"></div>
+    <input type="text" class="planoesecolhido">
+    <button class="chutar">Chutar!</button>
     <!-- <script src="js/script.js"></script> -->
     
 </body>
 
 <script>
+
+  var pergunta1 = '';
+  var button = document.querySelector(".chutar");
+  button.onclick = function() {
+    pergunta1 = document.querySelector("#pergunta1");
+  }
+  // $("button").click(function(){
+  //     var text = $(this).text();
+  //     $(".planoesecolhido").val(text);
+  //   });
 function candidatarvaga() {
   var candidato = document.getElementById("msg").value;
   var e;

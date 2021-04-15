@@ -1,0 +1,23 @@
+{
+
+    "plataformas": [
+      {
+     
+          "skuTablet": "TBT01",
+          "nomeTablet": "Tablet",
+          "descricaoTablet": "Chip para navegar à vontade"
+      },
+      {
+    
+          "skudesktop": "CPT02",
+          "nomedesktop": "Computador",
+          "descricaodesktop": "Seu computador|Sempre conectado"
+      },
+      {
+    
+          "skuwifi": "WF03",
+          "nomewifi": "WI-FI",
+          "descricaowifi": "Internet WI-FI para|casa toda"
+      }
+    ]
+}
