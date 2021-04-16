@@ -17,7 +17,7 @@
             <div class="row" *ngFor = "let plano of planos">
               <div class="col-6 text-center espaco_linha">{{plano.sku}}</div>
               <div class="col-2 text-center espaco_linha">{{plano.franquia}}</div>
-              <div class="col-2 text-center espaco_linha">{{plano.valor | currency}}</div>
+              <div class="col-2 text-center espaco_linha">R{{plano.valor | currency}}</div>
             </div>
             <p>{{mensagemcliente}}</p>
             <div class="row">
