@@ -109,7 +109,7 @@
                               <div *ngIf="CEP.errors.required">Digite o CEP</div>
                             </div>
                         </div>
-                        <div class="col-1"><label for="">telefone</label></div>
+                        <div class="col-2"><label for="">telefone</label></div>
                         <div class="col-4"><input type="text" class="input_wooza"  id="fone" name="fone" [textMask]="{mask: maskfone}" [(ngModel)]="client.fone" #fone="ngModel" required [ngClass]="{'is-invalid': f.submitted && fone.invalid}" placeholder="Digite o telefone">
                             <div *ngIf="f.submitted && fone.invalid" class="invalid-feedback">
                               <div *ngIf="fone.errors.required">Digite seu Telefone</div>
