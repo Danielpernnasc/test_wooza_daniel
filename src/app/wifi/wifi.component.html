@@ -2,7 +2,7 @@
     <div class="row">
       <div class="col-12">
          <div class="row">
-           <div class="col-4 offset-4 titulo_w">
+           <div class="col-6 offset-3 titulo_w">
               <h1 *ngFor="let wifi of roteador">{{wifi.nome}}</h1>
            </div>
          </div>
@@ -141,12 +141,12 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-6 offset-4">
-                        <div class="row espaco_linha">
-                          <div class="col-4">
+                      <div class="col-8 offset-3">
+                        <div class="espaco_linha flex">
+                          <div style="width: 200px">
                             <button type="submit" class="btnenviar">Enviar</button>
                           </div>
-                          <div class="col-4">
+                          <div style="width: 200px">
                             <button type="reset" class="btnenviar" (click)="cleanForm(f)">Cancelar</button>
                           </div>
                         </div>

@@ -28,10 +28,13 @@
 
  .linkstyle {
    @include fontwooza;
+  
+  
  }
  .linkstyle:hover {
    color: $color-wooza;
    text-decoration: none;
+  
  }
 .text-center {
   text-align: $center;
@@ -62,7 +65,7 @@
   border: solid $color-wooza;
 }
 .btnenviar {
-  width: 100%;
+  width: 100px;
   background: $color-wooza;
   color: #fff;
 }
