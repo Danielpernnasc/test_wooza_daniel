@@ -3,14 +3,17 @@ import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { catchError, retry } from 'rxjs/operators';
-import { Plano, TI00001 } from '../model';
+import { Modem, Plano, planoDesk } from '../model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlanosService {
-  url_plan = 'http://localhost:3001/planos';
-  url_ti00001 = 'http://localhost:3001/TI00001'
+  url_planMob = 'http://localhost:3000/planos_tablet';
+  url_plandek = 'http://localhost:3000/planos_desktop';
+  url_planwifi = 'http://localhost:3000/planos_wifi';
+
+  // url = 'http://localhost:3000/plataformas';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,20 +21,28 @@ export class PlanosService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  getPlanos(): Observable<Plano[]> {
-    return this.httpClient.get<Plano[]>(this.url_plan)
+  getPlanos(): Observable<[Plano]> {
+    return this.httpClient.get<[Plano]>(this.url_planMob)
       .pipe(
         retry(2),
         catchError(this.handleError))
     };
 
-  getTI01(): Observable<TI00001[]>{
-    return this.httpClient.get<TI00001[]>(this.url_ti00001)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      )
+  getPlanosdesk(): Observable<planoDesk[]>{
+    return this.httpClient.get<planoDesk[]>(this.url_plandek)
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    )
   };
+
+  getPlanoWifi(): Observable<Modem[]>{
+    return this.httpClient.get<Modem[]>(this.url_planwifi)
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    )
+  }
 
   // getPlanosId(id: number): Observable<TI00001> {
   //   return this.httpClient.get<TI00001>(this.url_plan + '/' + id)

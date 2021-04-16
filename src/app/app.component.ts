@@ -8,6 +8,7 @@ declare var $: any;
 })
 export class AppComponent {
   title = 'daniel-test-wooza';
+  
 
   logo: any = "assets/logo_wooza.png";
 }

@@ -1,0 +1,46 @@
+{
+
+    "plataformas": [
+        {
+        "Tablet": {
+            "sku": "TBT01",
+            "nome": "Tablet",
+            "descricao": "Chip para navegar à vontade"
+        },
+            "planostablet": {
+                "tabletTI00001": {
+                    "sku": "TI00001NA_NOVA_LINHA",
+                    "franquia": "1GB",
+                    "valor": "21.50",
+                    "ativo": true
+                },
+                "tabletTI0002": {
+                    "sku": "TI00002NA_NOVA_LINHA",
+                    "franquia": "2GB",
+                    "valor": "59.90",
+                    "ativo": true
+                },
+                "tabletTI0003": {
+                    "sku": "TI00003NA_NOVA_LINHA",
+                    "franquia": "4GB",
+                    "valor": "72.60",
+                    "ativo": true
+                },
+                "tabletTI0004": {
+                    "sku": "TI00004NA_NOVA_LINHA",
+                    "franquia": "6GB",
+                    "valor": "81.10",
+                    "ativo": false
+                },
+                "tabletTI0005": {
+                    "sku": "TI00005NA_NOVA_LINHA",
+                    "franquia": "10GB",
+                    "valor": "105.80",
+                    "ativo": true
+                }
+            }   
+        }
+    
+        
+    ]
+}
