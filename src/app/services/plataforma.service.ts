@@ -12,7 +12,6 @@ export class PlataformaService {
   url_desktop = 'http://localhost:3000/desktop';
   url_wifi = 'http://localhost:3000/wifi';
 
-  // url = ' http://localhost:3000/plataformas';
  
 
   constructor(private httpClient: HttpClient) { }
