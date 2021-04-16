@@ -1,3 +1,11 @@
+Para acessar o banco 
+so abrir a pasta data 
+e no terminal digitar json-server --watch database.json
+
+Acesse https://test-wooza-daniel-danielpernnasc.vercel.app
+
+
+
 # DanielTestWooza
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.15.
