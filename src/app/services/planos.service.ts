@@ -13,7 +13,6 @@ export class PlanosService {
   url_plandek = 'http://localhost:3000/planos_desktop';
   url_planwifi = 'http://localhost:3000/planos_wifi';
 
-  // url = 'http://localhost:3000/plataformas';
 
   constructor(private httpClient: HttpClient) { }
 
