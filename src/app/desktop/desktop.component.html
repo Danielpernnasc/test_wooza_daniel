@@ -105,7 +105,7 @@
                           </div>
                           <div class="col-1 text-center"><label for="">UF</label></div>
                           <div class="col-4">
-                            <select class="select_uf" (change)="changeState($event)" name="estado" id="estado" [(ngModel)]="client.estado" #estado="ngModel" required [ngClass]="{'is-invalid': f.submitted && estado.invalid}">
+                            <select class="select_uf" name="estado" id="estado" [(ngModel)]="client.estado" #estado="ngModel" required [ngClass]="{'is-invalid': f.submitted && estado.invalid}">
                               <option *ngFor="let state of UF" [ngValue]="state">{{state}}</option>
                             </select>
                             <div *ngIf="f.submitted && estado.invalid" class="invalid-feedback">

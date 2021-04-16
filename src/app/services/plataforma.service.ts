@@ -2,14 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Tablet } from '../model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlataformaService {
-  url_tablet = 'http://localhost:3001/tablet';
-  url_desktop = 'http://localhost:3001/desktop';
-  url_wifi = 'http://localhost:3001/wifi';
+  url_tablet = 'http://localhost:3000/tablet';
+  url_desktop = 'http://localhost:3000/desktop';
+  url_wifi = 'http://localhost:3000/wifi';
+
+  // url = ' http://localhost:3000/plataformas';
  
 
   constructor(private httpClient: HttpClient) { }
@@ -18,8 +21,8 @@ export class PlataformaService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  getPlataformasTablet(): Observable<[any]> {
-    return this.httpClient.get<[any]>(this.url_tablet)
+  getPlataformasTablet(): Observable<[Tablet]> {
+    return this.httpClient.get<[Tablet]>(this.url_tablet)
       .pipe(
         retry(2),
         catchError(this.handleError)

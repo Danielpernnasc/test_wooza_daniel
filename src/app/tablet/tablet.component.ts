@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm} from '@angular/forms';
 import { PlataformaService, PlanosService, ClienteService} from '../services';
-import { Tablet, Clientes, Plano, TI00001 } from '../model';
+import { Tablet, Clientes, Plano } from '../model';
 
 
 declare var $: any;
@@ -36,8 +36,7 @@ export class TabletComponent implements OnInit {
   plano = {} as Plano;
   planos: Plano[];
 
-  TI01 = {} as TI00001;
-  TI01s:  TI00001[];
+
 
   client = {} as Clientes;
   clients: Clientes[];
@@ -52,7 +51,6 @@ export class TabletComponent implements OnInit {
   ngOnInit(): void {
     this.getPlataformasTablet();
     this.getPlanos();
-    this.getTI01();
     this.getClient();
     // $(".btn_choose").click(function(){
     //   console.log(".btn_choose");
@@ -70,10 +68,6 @@ export class TabletComponent implements OnInit {
   changed(value) {
     this.value = value;
   }
-  changeState(e) {
-    this.value = e;
-  }
-
   getPlataformasTablet() {
     this.plataformaService.getPlataformasTablet().subscribe((mobile: Tablet[]) => {
       this.mobile = mobile;
@@ -86,11 +80,7 @@ export class TabletComponent implements OnInit {
     });
   }
 
-  getTI01() {
-    this.planoService.getTI01().subscribe((TI01: TI00001[]) => {
-      this.TI01s = TI01;
-    })
-  }
+
 
   getClient() {
     this.clientService.getClient().subscribe((client: Clientes[]) => {

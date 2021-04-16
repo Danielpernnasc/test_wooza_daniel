@@ -29,13 +29,13 @@ export class WifiComponent implements OnInit {
 
   value: any;
 
+
   constructor(private plataformaService: PlataformaService, private planoService: PlanosService, private clientService: ClienteService) { }
   changed(value) {
     this.value = value;
   }
-  changeState(e) {
-    this.value = e;
-  }
+
+
 
   ngOnInit(): void {
     this.getPlataformatWifi();

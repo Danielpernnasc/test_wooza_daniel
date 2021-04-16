@@ -45,9 +45,6 @@ export class DesktopComponent implements OnInit {
   changed(value) {
     this.value = value;
   }
-  changeState(e) {
-    this.value = e;
-  }
 
   getPlataformaDesktop() {
     this.plataformaService.getPlataformaDesk().subscribe((pc: Desktop[]) => {
