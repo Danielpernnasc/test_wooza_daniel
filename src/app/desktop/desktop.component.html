@@ -3,19 +3,19 @@
       <div class="col-12">
          <div class="row">
            <div class="col-8 offset-2 titulo_w">
-              <h1 *ngFor="let desktop of pc">{{desktop.nome}}</h1>
+              <h1 *ngFor="let desktop of pc">{{desktop.desktop.nome}}</h1>
            </div>
          </div>
          <div class="row" *ngFor="let desktop of pc">
           <div class="col-12 borderred">
               <div class="row">
                 <div class="text-center col-2 offset-5">
-                  <h3>{{desktop.sku}}</h3>
+                  <h3>{{desktop.desktop.sku}}</h3>
                 </div>
               </div>
-              <p class="text-center">{{desktop.descricao}}</p>
+              <p class="text-center">{{desktop.desktop.descricao}}</p>
               <div class="row" *ngFor = "let plano of planos">
-                <div class="col-6 text-center espaco_linha">{{plano.sku}}
+                <div class="col-6 text-center espaco_linha">
                   <div class="row">
                       <div class="col-6 offset-4 text-left">
                         <ul>

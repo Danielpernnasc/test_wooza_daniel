@@ -9,9 +9,9 @@ import { Modem, Plano, planoDesk } from '../model';
   providedIn: 'root'
 })
 export class PlanosService {
-  url_planMob = 'http://localhost:3000/planos_tablet';
-  url_plandek = 'http://localhost:3000/planos_desktop';
-  url_planwifi = 'http://localhost:3000/planos_wifi';
+  url_planMob = 'https://my-json-server.typicode.com/Danielpernnasc/data/planos_tablet';
+  url_plandek = 'https://my-json-server.typicode.com/Danielpernnasc/data/planos_desktop';
+  url_planwifi = 'https://my-json-server.typicode.com/Danielpernnasc/data/planos_wifi';
 
 
   constructor(private httpClient: HttpClient) { }

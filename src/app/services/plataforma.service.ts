@@ -8,9 +8,8 @@ import { Tablet } from '../model';
   providedIn: 'root'
 })
 export class PlataformaService {
-  url_tablet = 'http://localhost:3000/tablet';
-  url_desktop = 'http://localhost:3000/desktop';
-  url_wifi = 'http://localhost:3000/wifi';
+  url ='https://my-json-server.typicode.com/Danielpernnasc/data/plataforma'
+
 
  
 
@@ -21,7 +20,7 @@ export class PlataformaService {
   }
 
   getPlataformasTablet(): Observable<[Tablet]> {
-    return this.httpClient.get<[Tablet]>(this.url_tablet)
+    return this.httpClient.get<[Tablet]>(this.url)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -29,7 +28,7 @@ export class PlataformaService {
   }
 
   getPlataformaDesk(): Observable<[any]>{
-    return this.httpClient.get<[any]>(this.url_desktop)
+    return this.httpClient.get<[any]>(this.url)
     .pipe(
       retry(2),
       catchError(this.handleError)
@@ -37,7 +36,7 @@ export class PlataformaService {
   }
 
   getPlataformaWifi(): Observable<[any]>{
-    return this.httpClient.get<any>(this.url_wifi)
+    return this.httpClient.get<any>(this.url)
     .pipe(
       retry(2),
       catchError(this.handleError)

@@ -3,17 +3,17 @@
     <div class="col-12">
        <div class="row" *ngFor="let tablet of mobile">
          <div class="col-4 offset-4 titulo_w">
-            <h1 >{{tablet.nome}}</h1>
+            <h1 >{{tablet.tablet.nome}}</h1>
          </div>
        </div>
        <div class="row" *ngFor="let tablet of mobile">
         <div class="col-12 borderred">
           <div class="row">
             <div class="text-center col-4 offset-4">
-              <h3>{{tablet.sku}}</h3>
+              <h3>{{tablet.tablet.sku}}</h3>
             </div>
           </div>
-            <p class="text-center" *ngFor="let tablet of mobile">{{tablet.descricao}}</p>
+            <p class="text-center" *ngFor="let tablet of mobile">{{tablet.tablet.descricao}}</p>
             <div class="row" *ngFor = "let plano of planos">
               <div class="col-6 text-center espaco_linha">{{plano.sku}}</div>
               <div class="col-2 text-center espaco_linha">{{plano.franquia}}</div>
