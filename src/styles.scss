@@ -94,8 +94,14 @@
 .text-left > ul > li {
   text-align: left;
 }
-.margintop30px {
+.margin100px {
+  margin: 100px 0;
+}
+.margintop30px  {
   margin-top: 30px;
+}
+.link {
+  cursor: pointer;
 }
 /* Sections
    ========================================================================== */
