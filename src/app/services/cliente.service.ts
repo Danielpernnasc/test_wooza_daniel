@@ -9,7 +9,7 @@ import { Clientes } from '../model';
 })
 export class ClienteService {
 
-  url = 'https://my-json-server.typicode.com/Danielpernnasc/data/cliente';
+  url = 'https://my-json-server.typicode.com/danielpernnasc/data/cliente';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -35,7 +35,7 @@ export class ClienteService {
   saveClient(cliente: Clientes): Observable<Clientes> {
     return this.httpClient.post<Clientes>(this.url, JSON.stringify(cliente), this.httpOptions)
       .pipe(
-        retry(2),
+        retry(1),
         catchError(this.handleError)
       )
   }

@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { TabletComponent } from './tablet';
 import { DesktopComponent } from './desktop';
 import { WifiComponent } from './wifi';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { WifiComponent } from './wifi';
     AppComponent,
     TabletComponent,
     DesktopComponent,
-    WifiComponent
+    WifiComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

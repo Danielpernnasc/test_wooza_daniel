@@ -77,15 +77,15 @@ export class DesktopComponent implements OnInit {
     }
     
   }
-  // deleteClient(cliente: Clientes) {
-  //   this.clientService.deleteClient(cliente).subscribe(() => {
-  //     this.getClient();
-  //   });
-  // }
+  deleteClient(cliente: Clientes) {
+    this.clientService.deleteClient(cliente).subscribe(() => {
+      this.getClient();
+    });
+  }
 
-  // editClient(cliente: Clientes) {
-  //   this.client = {...cliente};
-  // }
+  editClient(cliente: Clientes) {
+    this.client = {...cliente};
+  }
 
   cleanForm(form: NgForm) {
     this.getClient();

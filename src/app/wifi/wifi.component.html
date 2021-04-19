@@ -33,7 +33,7 @@
               <p>{{mensagemcliente}}</p>
               <div class="row">
                 <div class="col-12">
-                    <form (ngSubmit)="f.form.valid && saveClient(f)" #f="ngForm" novalidate>
+                  <form (ngSubmit)="f.form.valid && saveClient(f)" #f="ngForm" novalidate>
                     <div class="row">
                       <div class="col-12">
                         <div class="row espaco_linha">
@@ -47,12 +47,6 @@
                                 <select class="input_wooza" #sel (change)="changed(sel.value)" id="plano" name="plano" [(ngModel)]="client.plano" #plano="ngModel" required [ngClass]="{'is-invalid': f.submitted && plano.invalid}" value="Select">
                                   <option *ngFor="let franq of PLANO" [ngValue]="franq">{{franq}}</option>
                                 </select>
-                                <div *ngIf="f.submitted && plano.invalid" class="invalid-feedback">
-                                  <div *ngIf="plano.errors.required">Escolha o Plano</div>
-                                </div>
-                              </div>
-                              <div class="col-6 margintop30px">
-                                <span>Wifi {{value}}</span>
                               </div>
                             </div>
                           </div>

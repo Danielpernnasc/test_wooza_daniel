@@ -17,7 +17,7 @@
               <div class="row" *ngFor = "let plano of planos">
                 <div class="col-6 text-center espaco_linha">
                   <div class="row">
-                      <div class="col-6 offset-4 text-left">
+                      <div class="col-6 offset-2 text-left">
                         <ul>
                             <li><span>Aparelho:</span>&nbsp;<span>{{plano.aparelho.nome}}</span></li>
                             <li><span>Valor:</span>&nbsp;<span>R{{plano.aparelho.valor | currency}}</span></li>
@@ -27,7 +27,7 @@
                       </div>
                   </div>  
                 </div>
-                <div class="col-2 text-center espaco_linha">{{plano.franquia}}</div>
+                <div class="col-3 text-center espaco_linha">{{plano.franquia}}</div>
                 <div class="col-2 text-center espaco_linha">R{{plano.valor | currency}}</div>
               </div>
               <p>{{mensagemcliente}}</p>
@@ -50,9 +50,6 @@
                                 <div *ngIf="f.submitted && plano.invalid" class="invalid-feedback">
                                   <div *ngIf="plano.errors.required">Escolha o Plano</div>
                                 </div>
-                              </div>
-                              <div class="col-6 margintop30px">
-                                <span>Desktop {{value}}</span>
                               </div>
                             </div>
                           </div>

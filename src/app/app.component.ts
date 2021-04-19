@@ -11,6 +11,8 @@ export class AppComponent {
   
 
   logo: any = "assets/logo_wooza.png";
+
+ 
 }
 
 
