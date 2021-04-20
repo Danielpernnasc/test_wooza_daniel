@@ -119,8 +119,9 @@ body {
   font-family: $font-page;
   text-align: center;
   background-color: gray;
-  overflow-x: hidden;
+ 
 }
+body { overflow-x: hidden;}
 
 /**
  * Render the `main` element consistently in IE.
