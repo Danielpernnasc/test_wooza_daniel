@@ -39,9 +39,11 @@
 .text-center {
   text-align: $center;
 }
+
  .logo {
   width: 100%;
-  margin: $mar50pxtopbot;
+  margin: 50px auto;
+  display: block;
 }
 .espaco_linha {
   margin: $epaco10pxtopbot
@@ -94,8 +96,8 @@
 .text-left > ul > li {
   text-align: left;
 }
-.margin100px {
-  margin: 100px 0;
+.margin200px {
+  margin: 200px 0;
 }
 .margintop30px  {
   margin-top: 30px;
@@ -117,6 +119,7 @@ body {
   font-family: $font-page;
   text-align: center;
   background-color: gray;
+  overflow: hidden;
 }
 
 /**

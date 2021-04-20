@@ -8,7 +8,8 @@ import { Tablet } from '../model';
   providedIn: 'root'
 })
 export class PlataformaService {
-  url ='https://my-json-server.typicode.com/Danielpernnasc/data/plataforma'
+  // url ='https://my-json-server.typicode.com/Danielpernnasc/data/plataforma'
+  url = 'https://dadofakeservidorapp.herokuapp.com/plataforma';
 
 
  

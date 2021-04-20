@@ -9,7 +9,7 @@ import { Clientes } from '../model';
 })
 export class ClienteService {
 
-  url = 'https://my-json-server.typicode.com/danielpernnasc/data/cliente';
+  url = 'https://dadofakeservidorapp.herokuapp.com/cliente';
 
   constructor(private httpClient: HttpClient) { }
 

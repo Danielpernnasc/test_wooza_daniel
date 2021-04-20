@@ -9,9 +9,12 @@ import { Modem, Plano, planoDesk } from '../model';
   providedIn: 'root'
 })
 export class PlanosService {
-  url_planMob = 'https://my-json-server.typicode.com/Danielpernnasc/data/planos_tablet';
-  url_plandek = 'https://my-json-server.typicode.com/Danielpernnasc/data/planos_desktop';
-  url_planwifi = 'https://my-json-server.typicode.com/Danielpernnasc/data/planos_wifi';
+  // url_planMob = 'https://my-json-server.typicode.com/Danielpernnasc/data/planos_tablet';
+  // url_plandek = 'https://my-json-server.typicode.com/Danielpernnasc/data/planos_desktop';
+  // url_planwifi = 'https://my-json-server.typicode.com/Danielpernnasc/data/planos_wifi';
+  url_planMob = 'https://dadofakeservidorapp.herokuapp.com/planos_tablet';
+  url_plandek = 'https://dadofakeservidorapp.herokuapp.com/planos_desktop';
+  url_planwifi = 'https://dadofakeservidorapp.herokuapp.com/planos_wifi';
 
 
   constructor(private httpClient: HttpClient) { }
