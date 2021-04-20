@@ -1,6 +1,3 @@
-Para acessar o banco 
-so abrir a pasta data 
-e no terminal digitar json-server --watch database.json
 
 Acesse https://test-wooza-daniel-danielpernnasc.vercel.app
 
