@@ -7,116 +7,12 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- $font-page:'Montserrat', sans-serif;
- $color-wooza: #333;
- $mar50pxtopbot: 50px 0;
- $bolder: "bolder";
- $center: "center";
- $epaco10pxtopbot: 10px 0;
 
- @mixin fontwooza {
-    color: $color-wooza;
-    font-weight: $bolder;
-    font-family: $font-page;
-    list-style: none;
- }
- @mixin borderarrend {
-   border: solid 1px $color-wooza;
-   border-radius: 10px;
-
- }
-
- .linkstyle {
-   @include fontwooza;
-  
-  
- }
- .linkstyle:hover {
-   color: $color-wooza;
-   text-decoration: none;
-  
- }
-.text-center {
-  text-align: $center;
-}
-
- .logo {
-  width: 350px;
-  margin: 50px auto;
-  display: block;
-}
-.logomobile {
-    width: 100%;
-    margin: 50px auto;
-    display: block;
-}
-
-@media screen and (max-width: 450px) {
-  .logo {display: none;}
-}
-@media screen and (min-width: 450px) {
-  .logomobile {display: none;}
-}
-.espaco_linha {
-  margin: $epaco10pxtopbot
-}
-.titulo_w > h1 {
-  text-align: center;
-  margin: $mar50pxtopbot;
-}
-.borderred {
-  @include borderarrend;
-}
-.borderred > h2 {
-  text-align: center;
-}
-.bold {
-  font-weight: $bolder;
-}
-.input_wooza {
-  width: 100%;
-  background: 0;
-  border: solid $color-wooza;
-}
-.btnenviar {
-  width: 100px;
-  background: $color-wooza;
-  color: #fff;
-}
  html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
-.btn_choose {
-  width: 100%;
-  margin: 10px;
-  background: 0;
-  border: 0;
-}
-.btn_choose:hover {
-  color: gray;
-} 
-
-.flex {
-  display: flex;
-}
-.select_uf {
-  background: 0;
-  border: solid #333;
-}
-.text-left > ul > li {
-  text-align: left;
-}
-.margin200px {
-  margin: 200px 0;
-}
-.margintop30px  {
-  margin-top: 30px;
-}
-.link {
-  cursor: pointer;
-}
 /* Sections
    ========================================================================== */
 
@@ -128,7 +24,6 @@ body {
   margin: 0;
   background: url('assets/background_wooza.jpg') no-repeat center top;
   background-size: cover;
-  font-family: $font-page;
   text-align: center;
   background-color: gray;
  
@@ -460,6 +355,110 @@ template {
   display: none;
 }
 
+ $font-page:'Montserrat', sans-serif;
+ $color-wooza: #333;
+ $mar50pxtopbot: 50px 0;
+ $bolder: "bolder";
+ $center: "center";
+ $epaco10pxtopbot: 10px 0;
 
+ @mixin fontwooza {
+    color: $color-wooza;
+    font-weight: $bolder;
+    font-family: $font-page;
+    list-style: none;
+ }
+ @mixin borderarrend {
+   border: solid 1px $color-wooza;
+   border-radius: 10px;
+
+ }
+
+ .linkstyle {
+   @include fontwooza;
+  
+  
+ }
+ .linkstyle:hover {
+   color: $color-wooza;
+   text-decoration: none;
+  
+ }
+.text-center {
+  text-align: $center;
+}
+
+ .logo {
+  width: 350px;
+  margin: 50px auto;
+  display: block;
+}
+.logomobile {
+    width: 100%;
+    margin: 50px auto;
+    display: block;
+}
+
+@media screen and (max-width: 450px) {
+  .logo {display: none;}
+}
+@media screen and (min-width: 450px) {
+  .logomobile {display: none;}
+}
+.espaco_linha {
+  margin: $epaco10pxtopbot
+}
+.titulo_w > h1 {
+  text-align: center;
+  margin: $mar50pxtopbot;
+}
+.borderred {
+  @include borderarrend;
+}
+.borderred > h2 {
+  text-align: center;
+}
+.bold {
+  font-weight: $bolder;
+}
+.input_wooza {
+  width: 100%;
+  background: 0;
+  border: solid $color-wooza;
+}
+.btnenviar {
+  width: 100px;
+  background: $color-wooza;
+  color: #fff;
+}
+.btn_choose {
+  width: 100%;
+  margin: 10px;
+  background: 0;
+  border: 0;
+}
+.btn_choose:hover {
+  color: gray;
+} 
+
+.flex {
+  display: flex;
+}
+.select_uf {
+  background: 0;
+  border: solid #333;
+}
+.text-left > ul > li {
+  text-align: left;
+}
+.margin200px {
+  margin: 200px 0;
+}
+.margintop30px  {
+  margin-top: 30px;
+}
+.link {
+  cursor: pointer;
+}
 
 
