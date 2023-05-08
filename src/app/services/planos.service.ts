@@ -9,9 +9,12 @@ import { Modem, Plano, planoDesk } from '../model';
   providedIn: 'root'
 })
 export class PlanosService {
-  url_planMob = 'https://dadofakeservidorapp.herokuapp.com/planos_tablet';
-  url_plandek = 'https://dadofakeservidorapp.herokuapp.com/planos_desktop';
-  url_planwifi = 'https://dadofakeservidorapp.herokuapp.com/planos_wifi';
+  // url_planMob = 'https://dadofakeservidorapp.herokuapp.com/planos_tablet';
+  url_planMob = 'https://my-json-server.typicode.com/Danielpernnasc/faker_server_test/planos_tablet';
+  // url_plandesk = 'https://dadofakeservidorapp.herokuapp.com/planos_desktop';
+  url_plandesk = 'https://my-json-server.typicode.com/Danielpernnasc/faker_server_test/planos_desktop';
+  // url_planwifi = 'https://dadofakeservidorapp.herokuapp.com/planos_wifi';
+  url_planwifi = 'https://my-json-server.typicode.com/Danielpernnasc/faker_server_test/planos_wifi';
 
 
   constructor(private httpClient: HttpClient) { }
@@ -28,7 +31,7 @@ export class PlanosService {
     };
 
   getPlanosdesk(): Observable<planoDesk[]>{
-    return this.httpClient.get<planoDesk[]>(this.url_plandek)
+    return this.httpClient.get<planoDesk[]>(this.url_plandesk)
     .pipe(
       retry(2),
       catchError(this.handleError)
