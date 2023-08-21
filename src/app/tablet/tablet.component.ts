@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm} from '@angular/forms';
 import { PlataformaService, PlanosService, ClienteService} from '../services';
 import { Tablet, Clientes, Plano } from '../model';
-import { EstadoService } from '../services/estado.service';
+import { EstadoService } from '../services';
 
 
 declare var $: any;

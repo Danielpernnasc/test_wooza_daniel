@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Clientes, Desktop, planoDesk } from '../model';
 import { ClienteService, PlanosService, PlataformaService } from '../services';
-import { EstadoService } from '../services/estado.service';
+import { EstadoService } from '../services';
 
 
 @Component({

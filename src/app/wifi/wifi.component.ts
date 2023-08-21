@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Clientes, Modem, Wifi } from '../model';
 import { ClienteService, PlanosService, PlataformaService } from '../services';
-import { EstadoService } from '../services/estado.service';
+import { EstadoService } from '../services';
 
 @Component({
   selector: 'app-wifi',

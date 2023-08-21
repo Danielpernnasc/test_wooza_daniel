@@ -7,10 +7,7 @@ declare var $: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'daniel-test-wooza';
-  
 
-  logo: any = "assets/logo_wooza.png";
 
  
 }

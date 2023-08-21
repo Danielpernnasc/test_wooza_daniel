@@ -11,6 +11,7 @@ import { TabletComponent } from './tablet';
 import { DesktopComponent } from './desktop';
 import { WifiComponent } from './wifi';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HomeComponent } from './home/home.component';
     TabletComponent,
     DesktopComponent,
     WifiComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
