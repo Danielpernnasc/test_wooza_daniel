@@ -9,8 +9,7 @@ import { Clientes } from '../model';
 })
 export class ClienteService {
 
-  // url = 'https://dadofakeservidorapp.herokuapp.com/cliente';
-  url = 'https://my-json-server.typicode.com/Danielpernnasc/faker_server_test/cliente'
+  url = 'https://my-json-server.typicode.com/Danielpernnasc/faker_server_test/cliente';
 
   constructor(private httpClient: HttpClient) { }
 

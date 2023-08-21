@@ -1,6 +1,6 @@
 export interface Clientes {
   
-  id: number;
+  id?: number;
   plano: string;
   nome: string;
   email: string;
@@ -12,4 +12,5 @@ export interface Clientes {
   fone: string;
   CEP: string;
   CPF: string;
+  enviar: boolean;
 }

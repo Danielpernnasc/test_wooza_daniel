@@ -4,19 +4,14 @@ export interface Plano {
   franquia: string,
   valor: number,
 }
-// export interface modem {
-//   nome: string,
-//   valor: number,
-//   numParc: number,
-//   valorpacela: number,
-// }
+
 
 export interface planoDesk {
   sku: string,
   franquia: string,
   valor: number,
   aparelho: {
-    // [key: string]:modem
+
     nome: string,
     valor: number,
     numParc: number,

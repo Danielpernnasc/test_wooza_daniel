@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm} from '@angular/forms';
 import { PlataformaService, PlanosService, ClienteService} from '../services';
 import { Tablet, Clientes, Plano } from '../model';
+import { EstadoService } from '../services/estado.service';
 
 
 declare var $: any;
@@ -14,11 +15,14 @@ declare var $: any;
 })
 export class TabletComponent implements OnInit {
 
-  public maskfone = ['(',/[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/,/\d/,/\d/, '-', /\d/, /\d/, /\d/, /\d/];
-  public maskcep = [/\d/,/\d/,/\d/,/\d/,/\d/,'-',/\d/,/\d/,/\d/];
-  public maskcpf = [/\d/,/\d/,/\d/,'.',/\d/,/\d/,/\d/,'.',/\d/,/\d/,/\d/,'-',/\d/,/\d/,];
 
-  UF: any = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'];
+
+  public caracterEspecialFONE: Array<string | RegExp> = [];
+  public caracterEspecialCEP: Array<string | RegExp> = [];
+  public caracterEspecialCPF: Array<string | RegExp> = [];
+
+  public EstadoList: Array<string> = [];
+
   PLANO: any = [
     'TI00001NA_NOVA_LINHA 1GB',
     'TI00002NA_NOVA_LINHA 2GB',
@@ -46,12 +50,17 @@ export class TabletComponent implements OnInit {
 
   constructor(private plataformaService: PlataformaService, 
     private planoService: PlanosService, 
-    private clientService: ClienteService) {}
+    private clientService: ClienteService,
+    private listadosEstado: EstadoService,
+    private caracterSpecial: EstadoService) {}
 
   ngOnInit(): void {
     this.getPlataformasTablet();
     this.getPlanos();
     this.getClient();
+    this.chamarListaEstado();
+    this.caracterEspeciais();
+
     // $(".btn_choose").click(function(){
     //   console.log(".btn_choose");
     //   var text = $(this).text();
@@ -59,7 +68,15 @@ export class TabletComponent implements OnInit {
     // });
 
   }
-
+  
+  public chamarListaEstado(){
+    this.EstadoList = this.listadosEstado.listasEstado()
+  }
+  public caracterEspeciais(){
+    this.caracterEspecialFONE = this.caracterSpecial.RegExpCarcterFone();
+    this.caracterEspecialCEP = this.caracterSpecial.RegExpCarcterCEP();
+    this.caracterEspecialCPF = this.caracterSpecial.RegExpCarcterCPF();
+  }
   // displayVals() {
   //   $("#single").val();
   //   $(".sku").html("Plano Escolhido");

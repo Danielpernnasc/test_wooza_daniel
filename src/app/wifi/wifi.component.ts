@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Clientes, Modem, Wifi } from '../model';
 import { ClienteService, PlanosService, PlataformaService } from '../services';
+import { EstadoService } from '../services/estado.service';
 
 @Component({
   selector: 'app-wifi',
@@ -9,16 +10,16 @@ import { ClienteService, PlanosService, PlataformaService } from '../services';
   styleUrls: ['./wifi.component.scss']
 })
 export class WifiComponent implements OnInit {
-  public maskfone = ['(',/[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/,/\d/,/\d/, '-', /\d/, /\d/, /\d/, /\d/];
-  public maskcep = [/\d/,/\d/,/\d/,/\d/,/\d/,'-',/\d/,/\d/,/\d/];
-  public maskcpf = [/\d/,/\d/,/\d/,'.',/\d/,/\d/,/\d/,'.',/\d/,/\d/,/\d/,'-',/\d/,/\d/,];
+  public caracterEspecialFONE: Array<string | RegExp> = [];
+  public caracterEspecialCEP: Array<string | RegExp> = [];
+  public caracterEspecialCPF: Array<string | RegExp> = [];
 
   wifi = {} as Wifi;
   roteador: Wifi[];
 
   modem = {} as Modem;
   sinal: Modem[]
-  UF = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'];
+  public EstadoList: Array<string> = [];
   PLANO = [
    "WI00001NA_NOVA_LINHA 1GB",
    "WI00002NA_NOVA_LINHA 2GB"  
@@ -30,7 +31,14 @@ export class WifiComponent implements OnInit {
   value: any;
 
 
-  constructor(private plataformaService: PlataformaService, private planoService: PlanosService, private clientService: ClienteService) { }
+  constructor(
+    private plataformaService: 
+    PlataformaService, 
+    private planoService: PlanosService, 
+    private clientService: ClienteService,
+    private listadosEstado: EstadoService,
+    private caracterSpecial: EstadoService
+    ) { }
   changed(value) {
     this.value = value;
   }
@@ -41,6 +49,14 @@ export class WifiComponent implements OnInit {
     this.getPlataformatWifi();
     this.getPlano();
     this.getClient();
+    this.EstadoList = this.listadosEstado.listasEstado();
+    this.caracterEspeciais();
+  }
+
+  public caracterEspeciais(){
+    this.caracterEspecialFONE = this.caracterSpecial.RegExpCarcterFone();
+    this.caracterEspecialCEP = this.caracterSpecial.RegExpCarcterCEP();
+    this.caracterEspecialCPF = this.caracterSpecial.RegExpCarcterCPF();
   }
 
   getPlataformatWifi(){

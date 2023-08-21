@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Clientes, Desktop, planoDesk } from '../model';
 import { ClienteService, PlanosService, PlataformaService } from '../services';
+import { EstadoService } from '../services/estado.service';
 
 
 @Component({
@@ -10,11 +11,11 @@ import { ClienteService, PlanosService, PlataformaService } from '../services';
   styleUrls: ['./desktop.component.scss']
 })
 export class DesktopComponent implements OnInit {
-  public maskfone = ['(',/[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/,/\d/,/\d/, '-', /\d/, /\d/, /\d/, /\d/];
-  public maskcep = [/\d/,/\d/,/\d/,/\d/,/\d/,'-',/\d/,/\d/,/\d/];
-  public maskcpf = [/\d/,/\d/,/\d/,'.',/\d/,/\d/,/\d/,'.',/\d/,/\d/,/\d/,'-',/\d/,/\d/,];
+  public caracterEspecialFONE: Array<string | RegExp> = [];
+  public caracterEspecialCEP: Array<string | RegExp> = [];
+  public caracterEspecialCPF: Array<string | RegExp> = [];
 
-  UF = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'];
+  public EstadoList: Array<string> = [];
   PLANO = [
    "CI00001NA_NOVA_LINHA 1GB",
    "CI00002NA_NOVA_LINHA 2GB",
@@ -33,12 +34,26 @@ export class DesktopComponent implements OnInit {
 
   value: any;
 
-  constructor(private plataformaService: PlataformaService, private planosService: PlanosService, private clientService: ClienteService) { }
+  constructor(
+    private plataformaService: PlataformaService, 
+    private planosService: PlanosService, 
+    private clientService: ClienteService, 
+    private listadosEstado: EstadoService,
+    private caracterSpecial: EstadoService) { }
 
   ngOnInit(): void {
     this.getPlataformaDesktop();
     this.getPlano();
     this.getClient();
+    this.EstadoList = this.listadosEstado.listasEstado();
+    this.caracterEspeciais();
+  }
+
+ 
+  public caracterEspeciais(){
+    this.caracterEspecialFONE = this.caracterSpecial.RegExpCarcterFone();
+    this.caracterEspecialCEP = this.caracterSpecial.RegExpCarcterCEP();
+    this.caracterEspecialCPF = this.caracterSpecial.RegExpCarcterCPF();
   }
 
 
