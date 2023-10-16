@@ -126,6 +126,42 @@
       "logradouro": "Cambara do sul",
       "CPF": "131.245.465-74",
       "id": 12
+    },
+    {
+      "plano": "CI00001NA_NOVA_LINHA 1GB",
+      "nome": "Elena da Silva Nascimento",
+      "email": "elenamarshmallowbaby@gmail.com",
+      "logradouro": "Jayme da Silva Telles",
+      "cidade": "São Paulo",
+      "estado": "PR",
+      "CEP": "03284-160",
+      "fone": "(11) 96666-6666",
+      "CPF": "654.654.654-54",
+      "id": 13
+    },
+    {
+      "nome": "Daniel Pericles do Nascimento",
+      "cidade": "SAO PAULO",
+      "estado": "SP",
+      "CEP": "03284-160",
+      "fone": "(11) 96711-9004",
+      "email": "elenamarshmallowbaby@gmail.com",
+      "logradouro": "Jayme da Silva Telles",
+      "CPF": "654.654.654-54",
+      "plano": "WI00001NA_NOVA_LINHA 1GB",
+      "id": 14
+    },
+    {
+      "plano": "TI00001NA_NOVA_LINHA 1GB",
+      "nome": "Maria Cristina Amorim da Silva",
+      "email": "maraia@gmail.com",
+      "logradouro": "Vitoria do Mearim",
+      "cidade": "São Paulo",
+      "CEP": "03595-200",
+      "estado": "RJ",
+      "fone": "(11) 11111-1111",
+      "CPF": "213.545.456-44",
+      "id": 15
     }
   ],
   "tablet": [

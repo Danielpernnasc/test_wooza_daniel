@@ -12,6 +12,7 @@ import { DesktopComponent } from './desktop';
 import { WifiComponent } from './wifi';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { FormComponent } from './form/form.component';
 
 
 
@@ -23,6 +24,7 @@ import { HeaderComponent } from './header/header.component';
     WifiComponent,
     HomeComponent,
     HeaderComponent,
+    FormComponent,
     
 
   ],
