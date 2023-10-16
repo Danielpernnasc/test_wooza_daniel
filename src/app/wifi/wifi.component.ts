@@ -19,7 +19,8 @@ export class WifiComponent implements OnInit {
 
   public Franquia: string  = Text.aFranquia
   public mensagemcliente: string  = Text.mensagemcliente
-
+  public choicePlan: string = Text.choicePlan
+  public chosenPlan: string = Text.chosenPlan
   wifi = {} as Wifi;
   roteador: Wifi[];
 

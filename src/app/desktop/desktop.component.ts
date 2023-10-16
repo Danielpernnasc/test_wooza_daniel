@@ -18,9 +18,10 @@ export class DesktopComponent implements OnInit {
   public listDesktop: Produtos;
   public EstadoList: Array<string> = [];
 
-  public Franquia: string  = Text.aFranquia
-  public mensagemcliente: string  = Text.mensagemcliente
-
+  public Franquia: string  = Text.aFranquia;
+  public mensagemcliente: string  = Text.mensagemcliente;
+  public choicePlan: string = Text.choicePlan;
+  public chosenPlan: string = Text.chosenPlan
 
 
   pc: Desktop[];

@@ -39,12 +39,12 @@
                         <div class="col-12">
                           <div class="row espaco_linha">
                             <div class="col-2 margintop30px">
-                              <label class="sku" for="">Plano Escolhido</label>
+                              <label class="sku" for="">{{chosenPlan}}</label>
                             </div>
                             <div class="col-8">
                               <div class="row">
                                 <div class="col-6">
-                                  <label for="">Escolha o seu plano</label>
+                                  <label for="">{{choicePlan}}</label>
                                   <select class="input_wooza" #sel (change)="changed(sel.value)" id="plano" name="plano" [(ngModel)]="client.plano" #plano="ngModel" required [ngClass]="{'is-invalid': f.submitted && plano.invalid}" value="Select">
                                     <option *ngFor="let franq of listWifi.PLANOWifi" [ngValue]="franq">{{franq}}</option>
                                   </select>
