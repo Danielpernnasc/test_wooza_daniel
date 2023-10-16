@@ -3,6 +3,8 @@ import { NgForm} from '@angular/forms';
 import { PlataformaService, PlanosService, ClienteService} from '../services';
 import { Tablet, Clientes, Plano } from '../model';
 import { EstadoService } from '../services';
+import { Produtos } from '../produtos';
+import { Text } from '../text';
 
 
 declare var $: any;
@@ -20,16 +22,11 @@ export class TabletComponent implements OnInit {
   public caracterEspecialFONE: Array<string | RegExp> = [];
   public caracterEspecialCEP: Array<string | RegExp> = [];
   public caracterEspecialCPF: Array<string | RegExp> = [];
+  public listMobile: Produtos;
 
   public EstadoList: Array<string> = [];
-
-  PLANO: any = [
-    'TI00001NA_NOVA_LINHA 1GB',
-    'TI00002NA_NOVA_LINHA 2GB',
-    'TI00003NA_NOVA_LINHA 4GB',
-    'TI00004NA_NOVA_LINHA 6GB',
-    'TI00005NA_NOVA_LINHA 10GB'
-  ];
+  public Franquia: string  = Text.aFranquia
+  public mensagemcliente: string  = Text.mensagemcliente
 
 
   
@@ -52,7 +49,9 @@ export class TabletComponent implements OnInit {
     private planoService: PlanosService, 
     private clientService: ClienteService,
     private listadosEstado: EstadoService,
-    private caracterSpecial: EstadoService) {}
+    private caracterSpecial: EstadoService) {
+      this.listMobile = new Produtos();
+    }
 
   ngOnInit(): void {
     this.getPlataformasTablet();
@@ -141,7 +140,7 @@ export class TabletComponent implements OnInit {
     this.client = {} as Clientes;
   }
 
-  Franquia = "Contrate a Franquia de 5GB para acessar internet";
-  mensagemcliente = "Preencha os dados abaixo e eviaremos o chip em até 3 dias uteis";
+
+
 
 }

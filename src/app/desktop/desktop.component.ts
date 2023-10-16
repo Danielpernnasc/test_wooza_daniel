@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Clientes, Desktop, planoDesk } from '../model';
+import { Produtos } from '../produtos';
 import { ClienteService, PlanosService, PlataformaService } from '../services';
 import { EstadoService } from '../services';
-
+import {Text} from '../text';
 
 @Component({
   selector: 'app-desktop',
@@ -14,16 +15,14 @@ export class DesktopComponent implements OnInit {
   public caracterEspecialFONE: Array<string | RegExp> = [];
   public caracterEspecialCEP: Array<string | RegExp> = [];
   public caracterEspecialCPF: Array<string | RegExp> = [];
-
+  public listDesktop: Produtos;
   public EstadoList: Array<string> = [];
-  PLANO = [
-   "CI00001NA_NOVA_LINHA 1GB",
-   "CI00002NA_NOVA_LINHA 2GB",
-   "CI00003NA_NOVA_LINHA 3GB",  
-    
-  ];
-  
-  desktop = {} as Desktop;
+
+  public Franquia: string  = Text.aFranquia
+  public mensagemcliente: string  = Text.mensagemcliente
+
+
+
   pc: Desktop[];
 
   plano = {} as planoDesk;
@@ -38,8 +37,11 @@ export class DesktopComponent implements OnInit {
     private plataformaService: PlataformaService, 
     private planosService: PlanosService, 
     private clientService: ClienteService, 
-    private listadosEstado: EstadoService,
-    private caracterSpecial: EstadoService) { }
+    public listadosEstado: EstadoService,
+    public caracterSpecial: EstadoService) {
+      this.listDesktop = new Produtos()
+     }
+
 
   ngOnInit(): void {
     this.getPlataformaDesktop();
@@ -47,6 +49,7 @@ export class DesktopComponent implements OnInit {
     this.getClient();
     this.EstadoList = this.listadosEstado.listasEstado();
     this.caracterEspeciais();
+ 
   }
 
  
@@ -109,6 +112,6 @@ export class DesktopComponent implements OnInit {
   }
 
 
-  Franquia = "Contrate a Franquia de 5GB para acessar internet";
-  mensagemcliente = "Preencha os dados abaixo e instalaremos sua internet em até 3 dias uteis";
+
+  
 }

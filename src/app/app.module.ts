@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,8 @@ import { HeaderComponent } from './header/header.component';
     WifiComponent,
     HomeComponent,
     HeaderComponent,
+    
+
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { HeaderComponent } from './header/header.component';
     HttpClientModule,
     TextMaskModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

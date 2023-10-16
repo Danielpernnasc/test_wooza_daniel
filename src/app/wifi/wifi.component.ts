@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Clientes, Modem, Wifi } from '../model';
+import { Produtos } from '../produtos';
+import { Text } from '../text';
 import { ClienteService, PlanosService, PlataformaService } from '../services';
 import { EstadoService } from '../services';
 
@@ -13,6 +15,10 @@ export class WifiComponent implements OnInit {
   public caracterEspecialFONE: Array<string | RegExp> = [];
   public caracterEspecialCEP: Array<string | RegExp> = [];
   public caracterEspecialCPF: Array<string | RegExp> = [];
+  public listWifi: Produtos;
+
+  public Franquia: string  = Text.aFranquia
+  public mensagemcliente: string  = Text.mensagemcliente
 
   wifi = {} as Wifi;
   roteador: Wifi[];
@@ -20,10 +26,6 @@ export class WifiComponent implements OnInit {
   modem = {} as Modem;
   sinal: Modem[]
   public EstadoList: Array<string> = [];
-  PLANO = [
-   "WI00001NA_NOVA_LINHA 1GB",
-   "WI00002NA_NOVA_LINHA 2GB"  
-  ];
 
   client = {} as Clientes;
   clients: Clientes[];
@@ -38,7 +40,9 @@ export class WifiComponent implements OnInit {
     private clientService: ClienteService,
     private listadosEstado: EstadoService,
     private caracterSpecial: EstadoService
-    ) { }
+    ) { 
+      this.listWifi = new Produtos()
+    }
   changed(value) {
     this.value = value;
   }
@@ -105,6 +109,5 @@ export class WifiComponent implements OnInit {
     this.client = {} as Clientes;
   }
 
-  Franquia = "Contrate a Franquia de 5GB para acessar internet";
-  mensagemcliente = "Preencha os dados abaixo e instalaremos sua internet em até 3 dias uteis";
+
 }
