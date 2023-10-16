@@ -106,15 +106,23 @@ export class TabletComponent implements OnInit {
   }
 
   saveClient(form: NgForm) {
-    if (this.client.id !== undefined) {
-      this.clientService.updateClient(this.client).subscribe(() => {
-        this.cleanForm(form);
-      });
-    } else {
-      this.clientService.saveClient(this.client).subscribe(() => {
-        this.cleanForm(form);
-      })
-    }
+    // if (this.client.id !== undefined) {
+    //   this.clientService.updateClient(this.client).subscribe(() => {
+    //     this.cleanForm(form);
+    //   });
+    // } else {
+    //   this.clientService.saveClient(this.client).subscribe(() => {
+    //     this.cleanForm(form);
+    //   })
+    // }
+    this.clientService.saveClient(this.client).subscribe({
+      next: ((res) => {
+        res
+        console.log(res, 'Respostas');
+      }),
+    
+      error: (erro => erro)
+    });
     
   }
   // deleteClient(cliente: Clientes) {

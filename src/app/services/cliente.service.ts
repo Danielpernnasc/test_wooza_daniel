@@ -9,7 +9,7 @@ import { Clientes } from '../model';
 })
 export class ClienteService {
 
-  url = 'https://my-json-server.typicode.com/Danielpernnasc/faker_server_test/cliente';
+  url = 'http://localhost:3000/usuarios';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -33,7 +33,7 @@ export class ClienteService {
       )
   }
   saveClient(cliente: Clientes): Observable<Clientes> {
-    return this.httpClient.post<Clientes>(this.url, JSON.stringify(cliente), this.httpOptions)
+    return this.httpClient.post<Clientes>(`${this.url}`, JSON.stringify(cliente), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
