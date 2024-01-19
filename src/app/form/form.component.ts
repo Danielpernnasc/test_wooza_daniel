@@ -16,12 +16,15 @@ export class FormComponent implements OnInit {
   public listWifi: Produtos;
   public listMobile: Produtos;
   value: any;
+  a: NgForm;
   constructor(  
     private clientService: ClienteService, 
     public listadosEstado: EstadoService,
     public caracterSpecial: EstadoService,
-    public router: Router
-    ) { this.listDesktop = new Produtos(),
+    public router: Router,
+    
+    ) { 
+      this.listDesktop = new Produtos(),
       this.listWifi = new Produtos(),
       this.listMobile = new Produtos();
     }
@@ -36,6 +39,17 @@ export class FormComponent implements OnInit {
   desktop!: boolean;
   wifi!: boolean;
   mobile!: boolean;
+
+  usuario = {
+    nome: '',
+    email: '',
+    logradouro: '',
+    cidade: '',
+    estado: '',
+    cep: '',
+    fone: '',
+    cpf: '',
+  }
 
   ngOnInit(): void {
     this.caracterEspeciais()
@@ -62,33 +76,33 @@ export class FormComponent implements OnInit {
   }
 
 
-  saveClient(form: NgForm) {
+  saveClient(formulario: NgForm) {
     if (this.client.id !== undefined) {
       this.clientService.updateClient(this.client).subscribe(() => {
-        this.cleanForm(form);
+        this.cleanForm(formulario);
       });
     } else {
       this.clientService.saveClient(this.client).subscribe(() => {
-        this.cleanForm(form);
+        this.cleanForm(formulario);
       })
     }
     
   }
-  deleteClient(cliente: Clientes) {
-    this.clientService.deleteClient(cliente).subscribe(() => {
-      //this.getClient();
-    });
-  }
+  // deleteClient(cliente: Clientes) {
+  //   this.clientService.deleteClient(cliente).subscribe(() => {
+     
+  //   });
+  // }
   changed(value) {
     this.value = value;
   }
-  editClient(cliente: Clientes) {
-    this.client = {...cliente};
-  }
+  // editClient(cliente: Clientes) {
+  //   this.client = {...cliente};
+  // }
 
-  cleanForm(form: NgForm) {
+  cleanForm(formulario: NgForm) {
     //this.getClient();
-    form.resetForm();
+    formulario.resetForm();
     this.client = {} as Clientes;
   }
 

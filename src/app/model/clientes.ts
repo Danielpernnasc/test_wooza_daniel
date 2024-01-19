@@ -10,7 +10,7 @@ export interface Clientes {
   cidade: string;
   estado: string;
   fone: string;
-  CEP: string;
-  CPF: string;
+  cep: string;
+  cpf: string;
   enviar: boolean;
 }

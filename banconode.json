@@ -162,6 +162,18 @@
       "fone": "(11) 11111-1111",
       "CPF": "213.545.456-44",
       "id": 15
+    },
+    {
+      "nome": "Elena da Silva Nascimento",
+      "email": "elenamarshmallowbaby@gmail.com",
+      "logradouro": "Jayme da Silva Telles",
+      "cidade": "São Paulo",
+      "estado": "PR",
+      "cep": "03284-160",
+      "fone": "(11) 96666-6666",
+      "cpf": "291.048.288-01",
+      "plano": "WI00002NA_NOVA_LINHA 2GB",
+      "id": 16
     }
   ],
   "tablet": [
