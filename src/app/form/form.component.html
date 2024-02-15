@@ -35,7 +35,7 @@
                 <select class="input_wooza" #sel (change)="changed(sel.value)" id="plano" name="plano" [(ngModel)]="client.plano" #plano="ngModel" required [ngClass]="{'is-invalid': f.submitted && plano.invalid}" value="Select">
                   <option *ngFor="let franq of listMobile.PLANOTablet" [ngValue]="franq">{{franq}}</option>
                 </select>
-                <div *ngIf="f.submitted && plano.invalid" class="invalid-feedback">
+                <div *ngIf="f.submitted && plano.invalid" class="invalid-feedback"   >
                   <div *ngIf="plano.errors.required">{{choicePlan}}</div>
                 </div>
               </div>
